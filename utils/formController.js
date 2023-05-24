@@ -42,7 +42,11 @@ form.addEventListener("submit", (e) => {
 
   alert(
     `Товар ${color} цвета в колличестве ${
-      counter.value <= 1 ? counter.value + " штука" : counter.value + " штуки"
+      counter.value >= 5
+        ? counter.value + " штук"
+        : counter.value <= 1
+        ? counter.value + " штука"
+        : counter.value + " штуки"
     }${
       !comment.value ? "" : " с коментарием: " + comment.value
     } добавлен в корзину!`
