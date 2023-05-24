@@ -1,0 +1,32 @@
+.switch__theme {
+  font-size: var(--text-medium);
+  font-weight: bold;
+  padding: 5px 25px;
+
+  border-radius: var(--radius-small);
+  background-color: var(--catalog-dark-bg);
+
+  border: none;
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.switch__theme__white {
+  display: none;
+  font-size: var(--text-medium);
+  font-weight: bold;
+  padding: 5px 25px;
+
+  border-radius: var(--radius-small);
+  background-color: #fff;
+
+  border: none;
+  color: var(--catalog-dark-bg);
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+}

@@ -1,0 +1,15 @@
+.footer_nav {
+  width: 100%;
+  background-color: var(--catalog-bg-dark);
+  font-size: var(--text-medium);
+}
+
+.footer_nav-list {
+  list-style-type: disc;
+  display: block;
+}
+
+.footer_nav-list li {
+  color: #fff;
+  padding-bottom: 15px;
+}
