@@ -4,53 +4,53 @@ class Products {
     let htmlCatalogJacket = " ";
     let htmlCatalogBoots = " ";
 
-    CATALOG__JEANS.forEach(({ title, img, date, category }) => {
-      htmlCatalogJeans += `<li class="card-item card-item-white">
-        <img сlass="card-img" src="${img}"/>
-        <h3 сlass="card-title">${title}</h3>
-        <span class="card-date" > <strong>Дата публикации</strong>:
-        ${getDayInfo(date)}</span>
-        <button class="card-button">Купить</button>
-        </li>`;
+    const htmlCatalogListSkelton = (htmlCatalogName, listTitle, anchorName) => {
+      return `<div id='category__anchor-${anchorName}' class="category__anchor"></div>
+      <h2 class="catalog__list-title ">${listTitle}</h2>
+      <ul class="catalog__list">
+      ${htmlCatalogName}
+      </ul>`;
+    };
+
+    const htmlCatalogCardSkelton = (title, img, date) => {
+      return `<li class="catalog__item catalog__item-white">
+    <img src="${img}"/>
+    <h3>${title}</h3>
+    <span  > <strong>Дата публикации</strong>:
+    ${getDayInfo(date)}</span>
+    <button>Купить</button>
+    </li>`;
+    };
+
+    CATALOG__JEANS.forEach(({ title, img, date }) => {
+      htmlCatalogJeans += htmlCatalogCardSkelton(title, img, date);
     });
 
-    CATALOG__JACKET.forEach(({ title, img, date, category }) => {
-      htmlCatalogJacket += `<li class="card-item card-item-white">
-      <img сlass="card-img " src="${img}"/>
-      <h3 сlass="card-title">${title}</h3>
-      <span class="card-date" > <strong>Дата публикации</strong>:
-      ${getDayInfo(date)}</span>
-      <button class="card-button">Купить</button>
-      </li>`;
+    CATALOG__JACKET.forEach(({ title, img, date }) => {
+      htmlCatalogJacket += htmlCatalogCardSkelton(title, img, date);
     });
 
-    CATALOG__BOOTS.forEach(({ title, img, date, category }) => {
-      htmlCatalogBoots += `<li class="card-item card-item-white">
-      <img сlass="card-img" src="${img}"/>
-      <h3 сlass="card-title">${title}</h3>
-      <span class="card-date" > <strong>Дата публикации</strong>:
-      ${getDayInfo(date)}</span>
-      <button class="card-button">Купить</button>
-      </li>`;
+    CATALOG__BOOTS.forEach(({ title, img, date }) => {
+      htmlCatalogBoots += htmlCatalogCardSkelton(title, img, date);
     });
 
-    const htmlJeans = `<div id="category-anchor-jeans"></div>
-    <h2 id="jeans-title">Джинсы</h2>
-    <ul class="jeans_card-list">
-    ${htmlCatalogJeans}
-    </ul>`;
+    const htmlJeans = htmlCatalogListSkelton(
+      htmlCatalogJeans,
+      "Джинсы",
+      "jeans"
+    );
 
-    const htmlJacket = `<div id="category-anchor-jacket"></div>
-    <h2 id="jacket-title">Куртки</h2>
-    <ul class="jacket_card-list">
-    ${htmlCatalogJacket}
-    </ul>`;
+    const htmlJacket = htmlCatalogListSkelton(
+      htmlCatalogJacket,
+      "Куртки",
+      "jacket"
+    );
 
-    const htmlBoots = `<div id="category-anchor-boots"></div>
-    <h2 id="boots-title">Обувь</h2>
-    <ul class="boots_card-list">
-    ${htmlCatalogBoots}
-    </ul>`;
+    const htmlBoots = htmlCatalogListSkelton(
+      htmlCatalogBoots,
+      "Обувь",
+      "boots"
+    );
 
     JEANS__CATALOG.innerHTML = htmlJeans;
     JACKET__CATALOG.innerHTML = htmlJacket;

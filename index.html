@@ -20,84 +20,85 @@
     <header id="header"></header>
     <div id="products">
       <div class="container">
-        <div id="jeans-catalog"></div>
-        <div id="jacket-catalog"></div>
-        <div id="boots-catalog"></div>
+        <div id="products__catalog-jeans"></div>
+        <div id="products__catalog-jacket"></div>
+        <div id="products__catalog-boots"></div>
       </div>
     </div>
     <footer id="footer"></footer>
 
-    <button id="myBtn" onclick="topFunction()" title="На верх">
+    <button id="upButton" onclick="topFunction()" title="На верх">
       <span class="material-symbols-outlined"> arrow_upward </span>
     </button>
     <div id="popup">
-      <form class="payment-form white__form">
+      <form class="form form-white">
         <h2 class="form__title">Форма покупки товара</h2>
+        <div class="form-counter">
+          <h3 class="form-counter__title">Введите колличетсво</h3>
 
-        <h3 class="form__counter-title">Введите колличетсво</h3>
-
-        <input
-          type="number"
-          id="counter"
-          class="form__counter-input"
-          value="1"
-          min="1"
-          step="1"
-          max="9"
-        />
-
-        <h3 class="form__radio-title">Выберите цвет</h3>
-        <div id="form_radio_btn">
-          <label class="form__radio-label">
+          <input
+            type="number"
+            id="counter"
+            class="form-counter__input"
+            value="1"
+            min="1"
+            step="1"
+            max="9"
+          />
+        </div>
+        <div class="form-radio"></div>
+        <h3 class="form-radio__title">Выберите цвет</h3>
+        <div id="form-radio">
+          <label class="form-radio__label">
             Красный
             <input
               type="radio"
-              class="form__radio-input"
+              class="form-radio__input"
               name="color"
               id="radio"
               checked
             />
           </label>
-          <label class="form__radio-label">
+          <label class="form-radio__label">
             Зеленый
             <input
               type="radio"
-              class="form__radio-input"
+              class="form-radio__input"
               name="color"
               id="radio"
             /> </label
-          ><label class="form__radio-label">
+          ><label class="form-radio__label">
             Синий
             <input
               type="radio"
-              class="form__radio-input"
+              class="form-radio__input"
               name="color"
               id="radio"
             /> </label
-          ><label class="form__radio-label">
+          ><label class="form-radio__label">
             Черный
             <input
               type="radio"
-              class="form__radio-input"
+              class="form-radio__input"
               name="color"
               id="radio"
             />
           </label>
         </div>
-        <div class="from__comment">
-          <label for="comment" class="from__comment-label"
+        <div class="form-comment">
+          <label for="comment" class="form-comment__label"
             >Поделитесь комментарием</label
           >
           <textarea
             name="comment"
             id="comment"
-            class="from__comment__input"
+            class="form-comment__input"
             maxlength="2000"
           ></textarea>
         </div>
-        <div class="form__button-group">
-          <button type="submit" class="form__button-submit">Купить</button>
-          <button type="button" class="form__button-close">Закрыть</button>
+        <div class="form__buttons">
+          <button type="submit" class="form__buttons-submit">Купить</button>
+          <button type="button" class="form__buttons-close">Закрыть</button>
         </div>
       </form>
     </div>
@@ -116,12 +117,13 @@
     <script src="./components/Footer/Footer.js"></script>
     <link rel="stylesheet" href="./components/Footer/style.css" />
 
-    <script src="./components/MyButton/MyBtn.js"></script>
+    <script src="./components/UpButton/UpButton.js"></script>
     <script src="./utils//formController.js"></script>
     <script src="./utils//themeController.js"></script>
 
-    <link rel="stylesheet" href="./components/switchBtn/style.css" />
-    <link rel="stylesheet" href="./components/MyButton/style.css" />
+    <link rel="stylesheet" href="./components/SwitchButton/style.css" />
+    <link rel="stylesheet" href="./components/UpButton/style.css" />
     <link rel="stylesheet" href="./components/Popup/style.css" />
+    <link rel="stylesheet" href="./styles/theme.css" />
   </body>
 </html>

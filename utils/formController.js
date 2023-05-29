@@ -1,12 +1,12 @@
-const form = POPUP__ROOT.querySelector(".payment-form");
+const form = POPUP__ROOT.querySelector(".form");
 
 const counter = form.counter;
 
 const comment = form.comment;
 
-const activateBtn = document.querySelectorAll(".card-button");
+const activateBtn = document.querySelectorAll(".catalog__item button");
 
-const closeBtn = form.querySelector(".form__button-close");
+const closeBtn = form.querySelector(".form__buttons-close");
 
 closeBtn.addEventListener("click", () => {
   POPUP__ROOT.style.display = "none";

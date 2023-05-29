@@ -162,8 +162,8 @@ const CATALOG__BOOTS = [
     category: "Обувь",
   },
   {
-    img: "https://tdstandart.su/wp-content/uploads/2019/07/ZOI_5607.png",
-    title: "Мокасины дачные",
+    img: "https://profipluskomi.ru/upload/iblock/847/mc4d91cvvmun9ntjhjsty07tckjpdtif.png",
+    title: "Ботинки зимние>",
     date: "2023,02,26",
     category: "Обувь",
   },

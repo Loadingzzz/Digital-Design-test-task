@@ -1,52 +1,47 @@
-const dark = "dark__theme";
-const darkCard = "dark__card";
-const darkHeader = "dark__header";
-const darkFooter = "dark__footer";
-const themeSwitchButtonDark = document.querySelector(".switch__theme");
-const themeSwitchButtonWhite = document.querySelector(".switch__theme__white");
+const themeSwitchButtonDark = document.querySelector(".theme__buttons-dark");
+const themeSwitchButtonWhite = document.querySelector(".theme__buttons-white");
+
+const producstItem = ROOT_PRODUCTS.querySelectorAll(".catalog__item");
+const headerNav = ROOT_HEADER.querySelector(".header__nav");
+const footerNav = ROOT_FOOTER.querySelector(".footer__nav");
+const popupForm = document.querySelector(".form");
 
 themeSwitchButtonDark.addEventListener("click", () => {
   themeSwitchButtonWhite.style.display = "block";
   themeSwitchButtonDark.style.display = "none";
-  ROOT_PRODUCTS.classList.toggle(dark);
-  const producstItem = ROOT_PRODUCTS.querySelectorAll(".card-item");
+  ROOT_PRODUCTS.classList.toggle("products-dark");
+
   producstItem.forEach((e) => {
-    e.classList.remove("card-item-white");
-    e.classList.toggle(darkCard);
+    e.classList.remove("catalog__item-white");
+    e.classList.toggle("catalog__item-dark");
   });
 
-  const headerNav = ROOT_HEADER.querySelector(".header_nav");
-  headerNav.classList.remove("header_nav");
-  headerNav.classList.toggle(darkHeader);
+  headerNav.classList.remove("header__nav");
+  headerNav.classList.toggle("header-dark");
 
-  const footerNav = ROOT_FOOTER.querySelector(".footer_nav");
-  footerNav.classList.remove("footer_nav");
-  footerNav.classList.toggle(darkFooter);
+  footerNav.classList.remove("footer__nav");
+  footerNav.classList.toggle("footer-dark");
 
-  const form = document.querySelector(".payment-form");
-  form.classList.remove("white__form");
-  form.classList.add("dark__from");
+  popupForm.classList.remove("form-white");
+  popupForm.classList.add("form-dark");
 });
 
 themeSwitchButtonWhite.addEventListener("click", () => {
   themeSwitchButtonDark.style.display = "block";
   themeSwitchButtonWhite.style.display = "none";
-  ROOT_PRODUCTS.classList.toggle(dark);
-  const producstItem = ROOT_PRODUCTS.querySelectorAll(".card-item");
+  ROOT_PRODUCTS.classList.toggle("products-dark");
+
   producstItem.forEach((e) => {
-    e.classList.add("card-item-white");
-    e.classList.toggle(darkCard);
+    e.classList.add("catalog__item-white");
+    e.classList.toggle("catalog__item-dark");
   });
 
-  const headerNav = ROOT_HEADER.querySelector(".header__nav-wrapper");
-  headerNav.classList.add("header_nav");
-  headerNav.classList.toggle(darkHeader);
+  headerNav.classList.add("header__nav");
+  headerNav.classList.toggle("header-dark");
 
-  const footerNav = ROOT_FOOTER.querySelector(".footer__nav-wrapper");
-  footerNav.classList.add("footer_nav");
-  footerNav.classList.toggle(darkFooter);
+  footerNav.classList.add("footer__nav");
+  footerNav.classList.toggle("footer-dark");
 
-  const form = document.querySelector(".payment-form");
-  form.classList.add("white__form");
-  form.classList.remove("dark__from");
+  popupForm.classList.add("form-white");
+  popupForm.classList.remove("form-dark");
 });
